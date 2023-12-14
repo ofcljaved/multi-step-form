@@ -1,5 +1,13 @@
+import { Container, StepBar } from './components';
+
 const App = () => {
-  return <h1>Project Initiated</h1>;
+  return (
+    <div className='grid min-h-[100svh] items-center'>
+      <Container>
+        <StepBar />
+      </Container>
+    </div>
+  );
 };
 
 export default App;
