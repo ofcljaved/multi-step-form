@@ -1,5 +1,11 @@
+import { Button } from '..';
+
 const Form = () => {
-  return <div>Form</div>;
+  return (
+    <div>
+      <Button className=''>Hello</Button>
+    </div>
+  );
 };
 
 export default Form;

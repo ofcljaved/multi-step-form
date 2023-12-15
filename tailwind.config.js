@@ -26,6 +26,13 @@ export default {
       gridTemplateColumns: {
         container: '1.25fr 2.75fr',
       },
+      gridTemplateRows: {
+        container: 'auto max-content',
+      },
+      backgroundImage: {
+        'stepbar-desktop': 'url("/bg-sidebar-desktop.svg")',
+        'stepbar-mobile': 'url("/bg-sidebar-mobile.svg")',
+      },
     },
   },
   plugins: [],
