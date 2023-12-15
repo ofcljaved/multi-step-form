@@ -23,8 +23,10 @@ export default {
           foreground: 'hsl(var(--muted-foreground))',
         },
       },
+      gridTemplateColumns: {
+        container: '1.25fr 2.75fr',
+      },
     },
   },
   plugins: [],
 };
-
