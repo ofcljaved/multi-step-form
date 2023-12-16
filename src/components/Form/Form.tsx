@@ -3,7 +3,9 @@ import { Button } from '..';
 const Form = () => {
   return (
     <div>
-      <Button variant='Secondary'>Hello</Button>
+      <Button variant='Destructive' className='bg-destructive/50'>
+        Hello
+      </Button>
     </div>
   );
 };

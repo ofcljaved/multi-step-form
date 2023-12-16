@@ -4,15 +4,15 @@
 
 @layer base {
   :root {
-    --background: 0, 0%, 100%;
-    --foreground: 231, 11%, 63%;
-    --primary: 243, 100%, 62%;
-    --primary-foreground: 229, 24%, 87%;
-    --secondary: 213, 96%, 18%;
-    --secondary-foreground: 231, 100%, 99%;
-    --muted: 206, 94%, 87%;
-    --muted-foreground: 217, 100%, 97%;
-    --destructive: 354, 84%, 57%;
+    --background: 0 0% 100%;
+    --foreground: 231 11% 63%;
+    --primary: 243 100% 62%;
+    --primary-foreground: 229 24% 87%;
+    --secondary: 213 96% 18%;
+    --secondary-foreground: 231 100% 99%;
+    --muted: 206 94% 87%;
+    --muted-foreground: 217 100% 97%;
+    --destructive: 354 84% 57%;
   }
 
   .dark {

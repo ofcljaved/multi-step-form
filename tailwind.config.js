@@ -16,7 +16,7 @@ export default {
           foreground: 'hsl(var(--secondary-foreground))',
         },
         destructive: {
-          DEFAULT: 'hsl(var(--destructive), <alpha-value>)',
+          DEFAULT: 'hsl(var(--destructive) / <alpha-value>)',
         },
         muted: {
           DEFAULT: 'hsl(var(--muted))',
@@ -37,3 +37,4 @@ export default {
   },
   plugins: [],
 };
+

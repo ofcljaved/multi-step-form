@@ -1,11 +1,21 @@
+import { Button } from '..';
+
 const StepBar = () => {
   return (
-    <div className=' bg-stepbar-mobile sm:bg-stepbar-desktop row-span-full rounded-lg'>
+    <div className=' row-span-full rounded-lg bg-stepbar-mobile sm:bg-stepbar-desktop'>
       <ul>
-        <li>step 1</li>
-        <li>step 2</li>
-        <li>step 3</li>
-        <li>step 4</li>
+        <li>
+          <Button variant='Ghost'>step 1</Button>
+        </li>
+        <li>
+          <Button variant='Ghost'>step 2</Button>
+        </li>
+        <li>
+          <Button variant='Ghost'>step 3</Button>
+        </li>
+        <li>
+          <Button variant='Ghost'>step 4</Button>
+        </li>
       </ul>
     </div>
   );
