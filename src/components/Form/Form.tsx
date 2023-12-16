@@ -3,7 +3,7 @@ import { Button } from '..';
 const Form = () => {
   return (
     <div>
-      <Button className=''>Hello</Button>
+      <Button variant='Secondary'>Hello</Button>
     </div>
   );
 };
