@@ -28,6 +28,7 @@ export default {
       },
       gridTemplateRows: {
         container: 'auto max-content',
+        'mobile-container': '1.5fr 1fr auto max-content',
       },
       backgroundImage: {
         'stepbar-desktop': 'url("/bg-sidebar-desktop.svg")',
@@ -37,4 +38,3 @@ export default {
   },
   plugins: [],
 };
-
