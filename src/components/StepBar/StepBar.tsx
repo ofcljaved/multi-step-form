@@ -16,7 +16,7 @@ const StepBar = () => {
             <li key={step}>
               <Button
                 variant='Ghost'
-                className='-mx-4 justify-items-start uppercase sm:-mx-0 sm:grid sm:grid-cols-[max-content_auto] sm:grid-rows-[max-content_auto] sm:gap-x-4'
+                className='-mx-4 w-full justify-normal justify-items-start uppercase sm:-mx-0 sm:grid sm:grid-cols-[max-content_auto] sm:grid-rows-[max-content_auto] sm:gap-x-4'
               >
                 <span
                   className={`row-span-full grid aspect-square h-8 place-items-center rounded-full font-bold ${activeClass}`}

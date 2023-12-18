@@ -27,14 +27,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       Destructive:
         'bg-destructive text-primary-foreground hover:bg-destructive/90',
       Outline: 'border bg-transparent shadow-sm hover:bg-muted-foreground',
-      Ghost: 'hover:bg-muted-foreground',
+      Ghost: 'hover:bg-muted-foreground/20',
     };
 
     return (
       <button
         type={type}
-        className={`focus-visible:ring-ring disabled:opacity-50, inline-flex items-center justify-center whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none
-        focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none ${variantStyle[variant]} ${className}`}
+        className={`whitespace-nowrap rounded-md px-4 py-2 text-sm transition-colors disabled:pointer-events-none disabled:opacity-50 ${variantStyle[variant]} ${className}`}
         ref={ref}
         {...props}
       >

@@ -24,10 +24,10 @@ export default {
         },
       },
       gridTemplateColumns: {
-        container: '1.25fr 2.75fr',
+        container: '1.2fr 2.8fr',
       },
       gridTemplateRows: {
-        container: 'auto max-content',
+        container: '1fr max-content',
         'mobile-container': '1.5fr 1fr auto max-content',
       },
       backgroundImage: {
