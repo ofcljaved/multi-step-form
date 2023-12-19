@@ -1,6 +1,6 @@
-import { Icon } from '..';
-import Checkbox from './Checkbox';
-import Radio from './Radio';
+// import { Icon } from '..';
+// import Checkbox from './Checkbox';
+// import Radio from './Radio';
 
 const Form = () => {
   // const planType: string = 'monthly';
@@ -96,7 +96,7 @@ const Form = () => {
       </div> */}
 
       {/* ------STEP 3 -------- */}
-      <h1 className='text-3xl font-bold text-secondary'>Pick add-ons</h1>
+      {/* <h1 className='text-3xl font-bold text-secondary'>Pick add-ons</h1>
       <p className='my-2 text-base text-foreground'>
         Add-ons helps enhance your gaming experience.
       </p>
@@ -148,7 +148,42 @@ const Form = () => {
           </p>
           <span className='text-sm text-primary'>+$9/mo</span>
         </Checkbox>
-      </form>
+      </form> */}
+
+      {/* ------STEP 4 -------- */}
+      <h1 className='text-3xl font-bold text-secondary'>Finishing up</h1>
+      <p className='my-2 text-base text-foreground'>
+        Double-check everything looks OK before confirming.
+      </p>
+      <div className='grid gap-4 pt-8'>
+        <div className='grid gap-4 rounded-lg bg-muted-foreground p-6'>
+          <div className='grid grid-cols-[1fr_max-content] items-center gap-5 '>
+            <p className='text-sm text-foreground'>
+              <strong className='text-base text-secondary'>
+                Arcade (Yearly)
+              </strong>
+              <br />
+              <a href='#' className='underline'>
+                Change
+              </a>
+            </p>
+            <span className='font-bold text-secondary'>+$20/mo</span>
+          </div>
+          <hr />
+          <div className='grid grid-cols-[1fr_max-content] items-center gap-5 text-sm'>
+            <p className='text-foreground'>Online Service</p>
+            <span className='text-secondary'>+$10/mo</span>
+          </div>
+          <div className='grid grid-cols-[1fr_max-content] items-center gap-5 text-sm'>
+            <p className='text-foreground'>Larger Storage</p>
+            <span className='text-secondary'>+$20/mo</span>
+          </div>
+        </div>
+      </div>
+      <div className='grid grid-cols-[1fr_max-content] gap-5 p-6 text-sm text-foreground'>
+        <span>Total (per year)</span>
+        <span className='text-xl font-bold text-primary'>$120/yr</span>
+      </div>
     </div>
   );
 };
