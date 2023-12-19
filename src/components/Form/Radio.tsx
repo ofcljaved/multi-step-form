@@ -8,17 +8,17 @@ const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
   ({ inputVisible, children, className, ...props }, ref) => {
     const id = useId();
     return (
-      <div className='w-full'>
-        <label className={className} htmlFor={id}>
-          {children}
-        </label>
+      <div className='relative w-full'>
         <input
           type='radio'
-          className={inputVisible ? 'accent-primary' : 'hidden'}
+          className={`peer ${inputVisible ? 'accent-primary' : 'hidden'}`}
           ref={ref}
           {...props}
           id={id}
         />
+        <label className={className} htmlFor={id}>
+          {children}
+        </label>
       </div>
     );
   }
