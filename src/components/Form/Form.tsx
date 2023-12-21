@@ -1,4 +1,5 @@
 // import { Icon } from '..';
+// import Input from './Input';
 // import Checkbox from './Checkbox';
 // import Radio from './Radio';
 
@@ -184,6 +185,19 @@ const Form = () => {
         <span>Total (per year)</span>
         <span className='text-xl font-bold text-primary'>$120/yr</span>
       </div>
+
+      {/* ------STEP 5 -------- */}
+      {/* <div className='grid place-items-center gap-3 self-center'>
+        <div className='my-4'>
+          <Icon name='Thankyou' />
+        </div>
+        <h1 className='text-4xl font-bold text-secondary'>Thank you!</h1>
+        <p className='my-2 text-center text-foreground'>
+          Thanks for confirming your subscription! We hope you have fun using
+          our platform. If you ever need support, please feel free to email us
+          to support@loremgaming.com
+        </p>
+      </div> */}
     </div>
   );
 };
