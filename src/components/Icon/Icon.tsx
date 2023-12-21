@@ -1,11 +1,14 @@
-import { IconSvg, IconKey } from './IconSvg';
+import { IconSvg } from './IconSvg';
 
 interface IconProps {
-  name: IconKey;
+  name: string;
 }
 
 const Icon = ({ name }: IconProps) => {
-  return IconSvg[name];
+  if (name in IconSvg) {
+    return IconSvg[name as keyof typeof IconSvg];
+  }
+  return null;
 };
 
 export default Icon;

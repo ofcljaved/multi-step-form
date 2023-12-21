@@ -17,9 +17,8 @@ export const steps: Step[] = [
   },
 ];
 
-export const stepsData: StepData[] = [
-  {
-    id: 1,
+export const stepsData: StepData = {
+  1: {
     heading: 'Personal info',
     description: 'Please provide your name, email address, and phone number.',
     form: [
@@ -46,8 +45,7 @@ export const stepsData: StepData[] = [
       },
     ],
   },
-  {
-    id: 2,
+  2: {
     heading: 'Select your plan',
     description: 'You have the option of monthly or yearly billing.',
     form: [
@@ -79,9 +77,9 @@ export const stepsData: StepData[] = [
         },
       },
     ],
+    planType: true,
   },
-  {
-    id: 3,
+  3: {
     heading: 'Pick add-ons',
     description: 'Add-ons help enhance your gaming experience.',
     form: [
@@ -138,9 +136,8 @@ export const stepsData: StepData[] = [
       },
     ],
   },
-  {
-    id: 4,
+  4: {
     heading: 'Finishing up',
     description: 'Double-check everything looks OK before confirming.',
   },
-];
+};

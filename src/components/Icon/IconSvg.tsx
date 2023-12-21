@@ -86,5 +86,3 @@ export const IconSvg = {
     </svg>
   ),
 };
-
-export type IconKey = keyof typeof IconSvg;

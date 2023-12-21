@@ -6,16 +6,18 @@ type Step = {
   id: number;
   title: string;
 };
-
+type BaseLabel = {
+  type: string;
+  amount: `${string}/${K extends 'monthly' ? 'mo' : 'yr'}`;
+};
+type RadioLabel = {
+  [K in PlanType]: BaseLabel;
+};
 type CheckboxLabel = {
-  [K in PlanType]: {
-    type: string;
-    amount: `${string}/${K extends 'monthly' ? 'mo' : 'yr'}`;
+  [K in PlanType]: BaseLabel & {
     description: string;
   };
 };
-
-type RadioLabel = OmitThisParametert<CheckboxLabel, 'description'>;
 
 type InputFrom = {
   field: 'input';
@@ -32,7 +34,7 @@ type ChoiceLabel =
   | { field: 'checkbox'; label: CheckboxLabel };
 
 type ChoiceForm = ChoiceLabel & {
-  inputVisible?: boolean;
+  inputVisible: boolean;
 };
 
 type Form = {
@@ -40,9 +42,10 @@ type Form = {
 } & (InputFrom | ChoiceForm);
 
 type StepData = {
-  id: number;
-  heading: string;
-  description: string;
-  form?: Form[];
+  [K in Step['id']]: {
+    heading: string;
+    description: string;
+    form?: Form[];
+    planType?: boolean;
+  };
 };
-
