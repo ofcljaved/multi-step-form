@@ -26,14 +26,10 @@ type InputFrom = {
   placeholder?: string;
 };
 
-type ChoiceLabel =
-  | {
-      field: 'radio';
-      label: RadioLabel;
-    }
-  | { field: 'checkbox'; label: CheckboxLabel };
-
-type ChoiceForm = ChoiceLabel & {
+type ChoiceForm = (
+  | { field: 'radio'; label: RadioLabel }
+  | { field: 'checkbox'; label: CheckboxLabel }
+) & {
   inputVisible: boolean;
 };
 

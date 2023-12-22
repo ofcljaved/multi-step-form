@@ -1,31 +1,42 @@
+import { SetURLSearchParams } from 'react-router-dom';
 import { Button } from '..';
 import { steps } from '../../assets/data';
 
-// const steps = ['your info', 'select plan', 'add-ons', 'summary'];
-const StepBar = () => {
-  const activeStep = 1; //TODO: make it state
+interface StepBarProps {
+  activeStep: number;
+  setSearchParams: SetURLSearchParams;
+}
+
+const StepBar = ({ activeStep, setSearchParams }: StepBarProps) => {
+  const handleClick = (stepCount: number) => {
+    setSearchParams(prev => {
+      prev.set('step', stepCount.toString());
+      return prev;
+    });
+  };
+
   return (
     <div className=' bg-stepbar-mobile bg-cover bg-no-repeat sm:row-span-full sm:rounded-lg sm:bg-stepbar-desktop'>
       <ul className='grid grid-flow-col justify-center gap-4 py-6 sm:grid-flow-row sm:justify-normal sm:gap-3 sm:px-4 sm:py-8'>
         {steps.map(step => {
-          const count = step.id;
           const activeClass =
-            activeStep === count
+            activeStep === step.id
               ? 'bg-muted'
               : 'border text-primary-foreground';
           return (
             <li key={step.title}>
               <Button
+                onClick={() => handleClick(step.id)}
                 variant='Ghost'
                 className='-mx-4 w-full justify-normal justify-items-start uppercase sm:-mx-0 sm:grid sm:grid-cols-[max-content_auto] sm:grid-rows-[max-content_auto] sm:gap-x-4'
               >
                 <span
                   className={`row-span-full grid aspect-square h-8 place-items-center rounded-full font-bold ${activeClass}`}
                 >
-                  {count}
+                  {step.id}
                 </span>
                 <p className='hidden text-xs font-thin text-primary-foreground sm:block'>
-                  Step {count}
+                  Step {step.id}
                 </p>
                 <p className='hidden text-muted-foreground sm:block'>
                   {step.title}

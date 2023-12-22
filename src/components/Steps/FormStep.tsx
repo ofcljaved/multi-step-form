@@ -15,7 +15,7 @@ const FormStep = ({ heading, description, form, planType }: FormStepProps) => {
       <p className='my-2 text-base text-foreground'>{description}</p>
       <Form formData={form} colFlow={planType} />
       {planType && (
-        <div className='my-8 grid w-full grid-flow-col justify-center gap-6 rounded bg-muted-foreground p-4 text-sm font-bold'>
+        <div className='mt-8 grid w-full grid-flow-col justify-center gap-6 rounded bg-muted-foreground p-4 text-sm font-bold'>
           <span className='text-secondary'>Monthly</span>
           <Checkbox
             inputVisible={false}
