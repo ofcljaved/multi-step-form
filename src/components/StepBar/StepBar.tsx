@@ -1,13 +1,10 @@
-import { SetURLSearchParams } from 'react-router-dom';
 import { Button } from '..';
 import { steps } from '../../assets/data';
+import { useStepQueryParam } from '../../hooks';
 
-interface StepBarProps {
-  activeStep: number;
-  setSearchParams: SetURLSearchParams;
-}
+const StepBar = () => {
+  const { activeStep, setSearchParams } = useStepQueryParam();
 
-const StepBar = ({ activeStep, setSearchParams }: StepBarProps) => {
   const handleClick = (stepCount: number) => {
     setSearchParams(prev => {
       prev.set('step', stepCount.toString());

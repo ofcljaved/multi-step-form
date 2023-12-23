@@ -17,7 +17,7 @@ export const steps: Step[] = [
   },
 ];
 
-export const stepsData: StepData = {
+export const stepsData: StepsData = {
   1: {
     heading: 'Personal info',
     description: 'Please provide your name, email address, and phone number.',
@@ -28,6 +28,7 @@ export const stepsData: StepData = {
         label: 'Name',
         placeholder: 'e.g. Stephen King',
         type: 'text',
+        required: true,
       },
       {
         field: 'input',
@@ -35,6 +36,7 @@ export const stepsData: StepData = {
         label: 'Email Address',
         placeholder: 'e.g. stephenking@lorem.com',
         type: 'email',
+        required: true,
       },
       {
         field: 'input',
@@ -42,6 +44,7 @@ export const stepsData: StepData = {
         label: 'Phone Number',
         placeholder: 'e.g. +1 234 567 890',
         type: 'tel',
+        required: true,
       },
     ],
   },
@@ -53,6 +56,7 @@ export const stepsData: StepData = {
         field: 'radio',
         name: 'plan',
         inputVisible: false,
+        defaultChecked: true,
         label: {
           monthly: { type: 'Arcade', amount: '$9/mo' },
           yearly: { type: 'Arcade', amount: '$90/yr' },

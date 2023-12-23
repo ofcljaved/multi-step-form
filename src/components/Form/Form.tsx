@@ -1,35 +1,32 @@
-import InputForm from './InputForm';
-import RadioForm from './RadioForm';
-import CheckboxForm from './CheckboxForm';
+import { Button } from '..';
+import { stepsData } from '../../assets/data';
+import { useStepQueryParam } from '../../hooks';
+import InputStep from '../Steps/InputStep';
 
-interface FormProps {
-  formData: Form[];
-  colFlow?: boolean;
-}
-const Form = ({ formData, colFlow }: FormProps) => {
-  const planType: PlanType = 'monthly';
+const Form = () => {
+  const { activeStep, nextStep, previousStep } = useStepQueryParam();
   return (
-    <form className={`grid gap-4 pt-8 ${colFlow && 'grid-cols-3'}`}>
-      {formData.map(form => {
-        switch (form.field) {
-          case 'input':
-            return <InputForm key={form.name} form={form} />;
-          case 'radio':
-            return (
-              <RadioForm
-                key={form.label.monthly.type}
-                form={form}
-                planType={planType}
-              />
-            );
-          case 'checkbox':
-            return (
-              <CheckboxForm key={form.name} form={form} planType={planType} />
-            );
-          default:
-            return null;
-        }
-      })}
+    <form className='grid grid-rows-container '>
+      {activeStep === 1 && <InputStep data={stepsData[activeStep]} />}
+      <div className='flex flex-row-reverse justify-between px-20 py-4'>
+        <Button className='px-6 py-3 text-base font-semibold capitalize'>
+          Confirm
+        </Button>
+        <Button
+          variant='Secondary'
+          className='px-6 py-3 text-base font-semibold capitalize'
+          onClick={nextStep}
+        >
+          Next Step
+        </Button>
+        <Button
+          variant='Ghost'
+          className='px-8 py-3 text-base font-semibold capitalize text-foreground hover:text-secondary'
+          onClick={previousStep}
+        >
+          Go Back
+        </Button>
+      </div>
     </form>
   );
 };
