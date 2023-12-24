@@ -1,13 +1,12 @@
 import { FromContainer } from '..';
 
-interface ConfirmStepProps {
-  heading: string;
-  description: string;
+interface StepProps {
+  data: StepsData;
 }
 
-const ConfirmStep = ({ heading, description }: ConfirmStepProps) => {
+const ConfirmStep = ({ data }: StepProps) => {
   return (
-    <FromContainer heading={heading} description={description}>
+    <FromContainer heading={data.heading} description={data.description}>
       <div className='grid gap-4 pt-8'>
         <div className='grid gap-4 rounded-lg bg-muted-foreground p-6'>
           <div className='grid grid-cols-[1fr_max-content] items-center gap-5 '>

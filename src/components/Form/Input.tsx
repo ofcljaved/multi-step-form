@@ -1,10 +1,9 @@
 import React, { useId } from 'react';
 
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
-  label?: string;
-  className?: string;
-}
+export type InputProps = React.InputHTMLAttributes<HTMLInputElement> &
+  Omit<InputField, 'field'> & {
+    className?: string;
+  };
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ label, type = 'text', className = '', ...props }, ref) => {
     const id = useId();

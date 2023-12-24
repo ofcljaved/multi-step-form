@@ -1,75 +1,52 @@
 /// <reference types="vite/client" />
-
-type PlanType = 'monthly' | 'yearly';
-
 type Step = {
   id: number;
   title: string;
 };
 
-// type BaseLabel = {
-//   type: string;
-//   amount: `${string}/${K extends 'monthly' ? 'mo' : 'yr'}`;
-// };
-// type RadioLabel = {
-//   [K in PlanType]: BaseLabel;
-// };
-// type CheckboxLabel = {
-//   [K in PlanType]: BaseLabel & {
-//     description: string;
-//   };
-// };
+type PlanType = 'monthly' | 'yearly';
 
-// type InputFrom = {
-//   field: 'input';
-//   label: string;
-//   type?: React.HTMLInputTypeAttribute;
-//   placeholder?: string;
-// };
+type BaseLabel = {
+  type: string;
+  amount: `${string}/${K extends 'monthly' ? 'mo' : 'yr'}`;
+};
 
-// type ChoiceForm = (
-//   | { field: 'radio'; label: RadioLabel }
-//   | { field: 'checkbox'; label: CheckboxLabel }
-// ) & {
-//   inputVisible: boolean;
-// };
+type RadioLabel = {
+  [K in PlanType]: BaseLabel;
+};
+type CheckboxLabel = {
+  [K in PlanType]: BaseLabel & {
+    description: string;
+  };
+};
 
-// type Form = {
-//   name: string;
-// } & (InputFrom | ChoiceForm);
+interface InputField {
+  field: string;
+  name: string;
+  label: string;
+  placeholder?: string;
+  type?: string;
+  required?: boolean;
+}
 
-// type StepData = {
-//   [K in Step['id']]: {
-//     heading: string;
-//     description: string;
-//     form?: Form[];
-//     planType?: boolean;
-//   };
-// };
+interface RadioField {
+  field: string;
+  name: string;
+  inputVisible: boolean;
+  defaultChecked?: boolean;
+  label: RadioLabel;
+}
 
-interface StepFormData {
+interface CheckboxField {
+  field: string;
+  name: string;
+  inputVisible: boolean;
+  defaultChecked?: boolean;
+  label: CheckboxLabel;
+}
+
+type StepsData = {
   heading: string;
   description: string;
-  form?: {
-    field: string;
-    name: string;
-    inputVisible: boolean;
-    label: {
-      monthly: {
-        type: string;
-        amount: string;
-        description: string;
-      };
-      yearly: {
-        type: string;
-        amount: string;
-        description: string;
-      };
-    };
-  }[];
-  planType?: boolean;
-}
-
-interface StepsData {
-  [key: Step['id']]: StepFormData;
-}
+  form?: InputField[] | RadioField[] | CheckboxField[];
+};

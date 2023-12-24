@@ -16,8 +16,10 @@ export const steps: Step[] = [
     title: 'summary',
   },
 ];
-
-export const stepsData: StepsData = {
+interface StepsDataType {
+  [K: number]: StepsData;
+}
+export const stepsData: StepsDataType = {
   1: {
     heading: 'Personal info',
     description: 'Please provide your name, email address, and phone number.',
@@ -81,7 +83,6 @@ export const stepsData: StepsData = {
         },
       },
     ],
-    planType: true,
   },
   3: {
     heading: 'Pick add-ons',
