@@ -6,6 +6,7 @@ const MAX_STEP = stepsData.length;
 
 const useStepQueryParam = () => {
   const [searchParams, setSearchParams] = useSearchParams({ step: '' });
+  const submit = searchParams.get('submit');
   const activeStep: number = parseInt(searchParams.get('step') || '1', 10);
   const visistedStep: Set<number> = useMemo(() => new Set(), []);
 
@@ -41,11 +42,13 @@ const useStepQueryParam = () => {
       }
 
       prev.set('step', '1');
+      prev.delete('submit');
       return prev;
     });
   }, [setSearchParams, visistedStep]);
 
   return {
+    submit,
     activeStep,
     setSearchParams,
     previousStep,

@@ -1,14 +1,17 @@
-import { FieldErrors, UseFormRegister, useWatch } from 'react-hook-form';
+import { useFormContext, useWatch } from 'react-hook-form';
 import { Checkbox, FromContainer, Icon } from '..';
 import { PlanSchemaType } from '../../lib/schema';
 
 interface StepProps {
   data: StepsData;
-  register: UseFormRegister<PlanSchemaType>;
-  errors: FieldErrors<PlanSchemaType>;
 }
 
-const AddonStep = ({ data, register, errors }: StepProps) => {
+const AddonStep = ({ data }: StepProps) => {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext<PlanSchemaType>();
+
   const plan = useWatch<PlanSchemaType>({ name: 'yearlyPlan' });
   const planType: PlanType = plan ? 'yearly' : 'monthly';
 

@@ -1,13 +1,15 @@
-import { FieldErrors, UseFormRegister } from 'react-hook-form';
+import { useFormContext } from 'react-hook-form';
 import { FromContainer, Input } from '..';
 import { PlanSchemaType } from '../../lib/schema';
 
 interface StepProps {
   data: StepsData;
-  register: UseFormRegister<PlanSchemaType>;
-  errors: FieldErrors<PlanSchemaType>;
 }
-const InputStep = ({ data, register, errors }: StepProps) => {
+const InputStep = ({ data }: StepProps) => {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext<PlanSchemaType>();
   return (
     <FromContainer heading={data.heading} description={data.description}>
       <div className='grid gap-4 pt-8'>

@@ -49,5 +49,5 @@ type StepsData = {
   title: string;
   heading: string;
   description: string;
-  form?: InputField[] | RadioField[] | CheckboxField[];
+  form?: (InputField | RadioField | CheckboxField)[];
 };

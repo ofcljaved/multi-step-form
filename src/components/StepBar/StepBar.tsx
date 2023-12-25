@@ -1,16 +1,17 @@
-import { UseFormTrigger } from 'react-hook-form';
 import { SetURLSearchParams } from 'react-router-dom';
 import { Button } from '..';
 import { stepsData } from '../../assets/data';
 import { FieldName, PlanSchemaType } from '../../lib/schema';
+import { useFormContext } from 'react-hook-form';
 
 interface StepBarProps {
-  trigger: UseFormTrigger<PlanSchemaType>;
   activeStep: number;
   setSearchParams: SetURLSearchParams;
 }
 
-const StepBar = ({ trigger, activeStep, setSearchParams }: StepBarProps) => {
+const StepBar = ({ activeStep, setSearchParams }: StepBarProps) => {
+  const { trigger } = useFormContext<PlanSchemaType>();
+
   const handleClick = async (stepCount: number) => {
     const fields = stepsData[activeStep - 1].form?.map(f => f.name);
     const output = await trigger(fields as FieldName[], { shouldFocus: true });
