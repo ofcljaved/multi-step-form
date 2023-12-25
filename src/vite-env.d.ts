@@ -26,7 +26,6 @@ interface InputField {
   label: string;
   placeholder?: string;
   type?: string;
-  required?: boolean;
 }
 
 interface RadioField {
@@ -46,6 +45,8 @@ interface CheckboxField {
 }
 
 type StepsData = {
+  id: number;
+  title: string;
   heading: string;
   description: string;
   form?: InputField[] | RadioField[] | CheckboxField[];

@@ -27,3 +27,9 @@
     --destructive: 0 62.8% 30.6%;
   }
 }
+
+@layer components {
+  .peer:checked ~ label > .icon-checked {
+    @apply bg-primary;
+  }
+}

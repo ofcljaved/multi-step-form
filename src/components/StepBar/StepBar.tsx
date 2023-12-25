@@ -1,11 +1,21 @@
+import { UseFormTrigger } from 'react-hook-form';
+import { SetURLSearchParams } from 'react-router-dom';
 import { Button } from '..';
-import { steps } from '../../assets/data';
-import { useStepQueryParam } from '../../hooks';
+import { stepsData } from '../../assets/data';
+import { FieldName, PlanSchemaType } from '../../lib/schema';
 
-const StepBar = () => {
-  const { activeStep, setSearchParams } = useStepQueryParam();
+interface StepBarProps {
+  trigger: UseFormTrigger<PlanSchemaType>;
+  activeStep: number;
+  setSearchParams: SetURLSearchParams;
+}
 
-  const handleClick = (stepCount: number) => {
+const StepBar = ({ trigger, activeStep, setSearchParams }: StepBarProps) => {
+  const handleClick = async (stepCount: number) => {
+    const fields = stepsData[activeStep - 1].form?.map(f => f.name);
+    const output = await trigger(fields as FieldName[], { shouldFocus: true });
+    if (!output) return;
+
     setSearchParams(prev => {
       prev.set('step', stepCount.toString());
       return prev;
@@ -15,7 +25,7 @@ const StepBar = () => {
   return (
     <div className=' bg-stepbar-mobile bg-cover bg-no-repeat sm:row-span-full sm:rounded-lg sm:bg-stepbar-desktop'>
       <ul className='grid grid-flow-col justify-center gap-4 py-6 sm:grid-flow-row sm:justify-normal sm:gap-3 sm:px-4 sm:py-8'>
-        {steps.map(step => {
+        {stepsData.map(step => {
           const activeClass =
             activeStep === step.id
               ? 'bg-muted'

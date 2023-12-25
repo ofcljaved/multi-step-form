@@ -1,12 +1,15 @@
 import React, { useId } from 'react';
+import { FieldError } from 'react-hook-form';
 
 export interface RadioProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   inputVisible: boolean;
+  error?: FieldError;
 }
 const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
-  ({ inputVisible, children, className, ...props }, ref) => {
+  ({ inputVisible, children, className, error, ...props }, ref) => {
     const id = useId();
+
     return (
       <div className='relative w-full'>
         <input
@@ -19,6 +22,7 @@ const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
         <label className={className} htmlFor={id}>
           {children}
         </label>
+        {error && error.message}
       </div>
     );
   }

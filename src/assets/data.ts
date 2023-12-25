@@ -1,26 +1,7 @@
-export const steps: Step[] = [
+export const stepsData: StepsData[] = [
   {
     id: 1,
     title: 'your info',
-  },
-  {
-    id: 2,
-    title: 'select plan',
-  },
-  {
-    id: 3,
-    title: 'add-ons',
-  },
-  {
-    id: 4,
-    title: 'summary',
-  },
-];
-interface StepsDataType {
-  [K: number]: StepsData;
-}
-export const stepsData: StepsDataType = {
-  1: {
     heading: 'Personal info',
     description: 'Please provide your name, email address, and phone number.',
     form: [
@@ -30,7 +11,6 @@ export const stepsData: StepsDataType = {
         label: 'Name',
         placeholder: 'e.g. Stephen King',
         type: 'text',
-        required: true,
       },
       {
         field: 'input',
@@ -38,7 +18,6 @@ export const stepsData: StepsDataType = {
         label: 'Email Address',
         placeholder: 'e.g. stephenking@lorem.com',
         type: 'email',
-        required: true,
       },
       {
         field: 'input',
@@ -46,11 +25,12 @@ export const stepsData: StepsDataType = {
         label: 'Phone Number',
         placeholder: 'e.g. +1 234 567 890',
         type: 'tel',
-        required: true,
       },
     ],
   },
-  2: {
+  {
+    id: 2,
+    title: 'select plan',
     heading: 'Select your plan',
     description: 'You have the option of monthly or yearly billing.',
     form: [
@@ -84,13 +64,15 @@ export const stepsData: StepsDataType = {
       },
     ],
   },
-  3: {
+  {
+    id: 3,
+    title: 'add-ons',
     heading: 'Pick add-ons',
     description: 'Add-ons help enhance your gaming experience.',
     form: [
       {
         field: 'checkbox',
-        name: 'online-service',
+        name: 'onlineService',
         inputVisible: false,
         label: {
           monthly: {
@@ -107,7 +89,7 @@ export const stepsData: StepsDataType = {
       },
       {
         field: 'checkbox',
-        name: 'larger-storage',
+        name: 'largerStorage',
         inputVisible: false,
         label: {
           monthly: {
@@ -124,7 +106,7 @@ export const stepsData: StepsDataType = {
       },
       {
         field: 'checkbox',
-        name: 'customizable-profile',
+        name: 'customizableProfile',
         inputVisible: false,
         label: {
           monthly: {
@@ -141,8 +123,10 @@ export const stepsData: StepsDataType = {
       },
     ],
   },
-  4: {
+  {
+    id: 4,
+    title: 'summary',
     heading: 'Finishing up',
     description: 'Double-check everything looks OK before confirming.',
   },
-};
+];
