@@ -38,7 +38,6 @@ export const stepsData: StepsData[] = [
         field: 'radio',
         name: 'plan',
         inputVisible: false,
-        defaultChecked: true,
         label: {
           monthly: { type: 'Arcade', amount: '$9/mo' },
           yearly: { type: 'Arcade', amount: '$90/yr' },
