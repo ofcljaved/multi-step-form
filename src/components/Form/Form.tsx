@@ -24,8 +24,7 @@ const Form = ({
 }: FormHandlerProps) => {
   const { trigger, handleSubmit, reset } = useFormContext<PlanSchemaType>();
 
-  const processForm: SubmitHandler<PlanSchemaType> = data => {
-    console.log(data);
+  const processForm: SubmitHandler<PlanSchemaType> = () => {
     setSearchParams(prev => {
       prev.set('submit', 'true');
       return prev;
