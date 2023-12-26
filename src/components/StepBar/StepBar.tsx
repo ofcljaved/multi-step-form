@@ -24,7 +24,7 @@ const StepBar = ({ activeStep, setSearchParams }: StepBarProps) => {
   };
 
   return (
-    <div className=' bg-stepbar-mobile bg-cover bg-no-repeat sm:row-span-full sm:rounded-lg sm:bg-stepbar-desktop'>
+    <div className='col-span-full row-start-1 row-end-3 grid grid-rows-[subgrid] bg-stepbar-mobile bg-cover bg-no-repeat sm:col-span-1 sm:row-span-full sm:block sm:rounded-lg sm:bg-stepbar-desktop'>
       <ul className='grid grid-flow-col justify-center gap-4 py-6 sm:grid-flow-row sm:justify-normal sm:gap-3 sm:px-4 sm:py-8'>
         {stepsData.map(step => {
           const activeClass =

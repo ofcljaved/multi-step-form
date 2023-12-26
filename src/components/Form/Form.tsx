@@ -47,7 +47,7 @@ const Form = ({
 
   return (
     <form
-      className='grid grid-rows-container'
+      className='col-span-full row-start-2 row-end-[10] grid grid-rows-container sm:col-span-1 sm:row-start-auto sm:row-end-auto'
       onSubmit={handleSubmit(processForm)}
     >
       {activeStep === 1 && <InputStep data={stepsData[activeStep - 1]} />}
@@ -58,10 +58,10 @@ const Form = ({
       )}
       {activeStep === 4 && submit === 'true' && <FinalStep />}
       {submit !== 'true' && (
-        <div className='flex flex-row-reverse justify-between px-20 py-4'>
+        <div className='flex flex-row-reverse justify-between bg-white px-4 py-4 sm:px-20'>
           {activeStep === stepsData.length ? (
             <Button
-              className='px-6 py-3 text-base font-semibold capitalize'
+              className='px-4 py-3 text-base font-medium capitalize sm:px-6'
               onClick={confirmForm}
             >
               Confirm
@@ -69,7 +69,7 @@ const Form = ({
           ) : (
             <Button
               variant='Secondary'
-              className='px-6 py-3 text-base font-semibold capitalize'
+              className='px-4 py-3 text-base font-medium capitalize sm:px-6'
               onClick={next}
             >
               Next Step
@@ -79,7 +79,7 @@ const Form = ({
           {activeStep !== 1 && (
             <Button
               variant='Ghost'
-              className='px-8 py-3 text-base font-semibold capitalize text-foreground hover:text-secondary'
+              className='px-8 py-3 text-base font-medium capitalize text-foreground hover:text-secondary'
               onClick={previousStep}
             >
               Go Back

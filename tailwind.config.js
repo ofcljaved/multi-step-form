@@ -1,9 +1,13 @@
 /** @type {import('tailwindcss').Config} */
+import { fontFamily } from 'tailwindcss/defaultTheme';
 export default {
   darkMode: ['class'],
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Ubuntu', ...fontFamily.sans],
+      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
@@ -28,7 +32,7 @@ export default {
       },
       gridTemplateRows: {
         container: '1fr max-content',
-        'mobile-container': '1.5fr 1fr auto max-content',
+        'mobile-container': 'repeat(3, auto)',
       },
       backgroundImage: {
         'stepbar-desktop': 'url("/bg-sidebar-desktop.svg")',
