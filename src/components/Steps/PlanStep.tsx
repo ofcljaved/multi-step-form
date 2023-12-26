@@ -20,12 +20,11 @@ const PlanStep = ({ data }: StepProps) => {
         {data.form &&
           (data.form as RadioField[]).map(form => {
             const name = form.name as keyof PlanSchemaType;
-            const { label, inputVisible, defaultChecked } = form;
+            const { label, inputVisible } = form;
             return (
               <Radio
                 key={label.monthly.type}
                 inputVisible={inputVisible}
-                defaultChecked={defaultChecked}
                 value={label.monthly.type}
                 error={errors[name]}
                 {...register(name as keyof PlanSchemaType)}

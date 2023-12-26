@@ -32,7 +32,6 @@ interface RadioField {
   field: string;
   name: string;
   inputVisible: boolean;
-  defaultChecked?: boolean;
   label: RadioLabel;
 }
 
@@ -40,7 +39,6 @@ interface CheckboxField {
   field: string;
   name: string;
   inputVisible: boolean;
-  defaultChecked?: boolean;
   label: CheckboxLabel;
 }
 

@@ -7,6 +7,7 @@ import { useStepQueryParam } from './hooks';
 const App = () => {
   const methods = useForm<PlanSchemaType>({
     resolver: zodResolver(PlanSchema),
+    defaultValues: { plan: 'Arcade', yearlyPlan: false },
   });
 
   const { activeStep, submit, nextStep, previousStep, setSearchParams } =
