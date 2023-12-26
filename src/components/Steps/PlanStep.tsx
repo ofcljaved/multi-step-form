@@ -16,7 +16,7 @@ const PlanStep = ({ data }: StepProps) => {
 
   return (
     <FromContainer heading={data.heading} description={data.description}>
-      <div className='grid grid-cols-3 gap-4 pt-8'>
+      <div className='grid gap-3 pt-3 sm:grid-cols-3 sm:gap-4 sm:pt-8'>
         {data.form &&
           (data.form as RadioField[]).map(form => {
             const name = form.name as keyof PlanSchemaType;
@@ -29,10 +29,10 @@ const PlanStep = ({ data }: StepProps) => {
                 value={label.monthly.type}
                 error={errors[name]}
                 {...register(name as keyof PlanSchemaType)}
-                className='grid gap-10 rounded-lg border border-foreground p-4 hover:cursor-pointer hover:border-primary focus-visible:border-primary peer-checked:border-primary peer-checked:bg-muted-foreground'
+                className='flex gap-3 rounded-lg border border-foreground p-4 hover:cursor-pointer hover:border-primary focus-visible:border-primary peer-checked:border-primary peer-checked:bg-muted-foreground sm:grid sm:gap-10'
               >
                 <Icon name={label[planType].type} />
-                <div className='grid gap-1'>
+                <div className='grid sm:gap-1'>
                   <strong className='text-secondary'>
                     {label[planType].type}
                   </strong>
@@ -40,7 +40,7 @@ const PlanStep = ({ data }: StepProps) => {
                     {label[planType].amount}
                   </span>
                   {planType !== 'monthly' && (
-                    <span className='text-xs font-semibold text-secondary'>
+                    <span className='text-xs font-medium text-secondary'>
                       2 months free
                     </span>
                   )}
@@ -49,7 +49,7 @@ const PlanStep = ({ data }: StepProps) => {
             );
           })}
       </div>
-      <div className='my-8 grid w-full grid-flow-col justify-center gap-6 rounded bg-muted-foreground p-4 text-sm font-bold'>
+      <div className='mt-4 grid w-full grid-flow-col justify-center gap-6 rounded bg-muted-foreground p-4 text-sm font-bold sm:my-8'>
         <span className='text-secondary'>Monthly</span>
         <Checkbox
           inputVisible={false}

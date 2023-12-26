@@ -12,7 +12,7 @@ const InputStep = ({ data }: StepProps) => {
   } = useFormContext<PlanSchemaType>();
   return (
     <FromContainer heading={data.heading} description={data.description}>
-      <div className='grid gap-4 pt-8'>
+      <div className='grid gap-3 pt-3 sm:gap-4 sm:pt-8'>
         {data.form &&
           (data.form as InputField[]).map(form => {
             const name = form.name as keyof PlanSchemaType;
@@ -23,7 +23,7 @@ const InputStep = ({ data }: StepProps) => {
                 label={label}
                 placeholder={placeholder}
                 type={type}
-                className='font-semibold placeholder:text-foreground'
+                className='font-medium placeholder:text-foreground'
                 error={errors[name]}
                 {...register(name)}
               />

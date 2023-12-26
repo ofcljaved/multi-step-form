@@ -79,7 +79,7 @@ const Form = ({
           {activeStep !== 1 && (
             <Button
               variant='Ghost'
-              className='px-8 py-3 text-base font-medium capitalize text-foreground hover:text-secondary'
+              className='px-2 py-3 text-base font-medium capitalize text-foreground hover:text-secondary sm:px-8'
               onClick={previousStep}
             >
               Go Back

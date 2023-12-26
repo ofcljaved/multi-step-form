@@ -8,8 +8,10 @@ interface ContainerProps {
 
 const FromContainer = ({ heading, description, children }: ContainerProps) => {
   return (
-    <div className='px-4 py-10 sm:px-20'>
-      <h1 className='text-3xl font-bold text-secondary'>{heading}</h1>
+    <div className='mx-4 self-start rounded-xl bg-white px-6 py-8 sm:mx-0 sm:self-auto sm:px-20 sm:py-10'>
+      <h1 className='text-2xl font-bold text-secondary sm:text-3xl'>
+        {heading}
+      </h1>
       <p className='my-2 text-base text-foreground'>{description}</p>
       {children}
     </div>

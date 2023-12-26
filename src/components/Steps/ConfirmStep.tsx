@@ -12,23 +12,25 @@ const ConfirmStep = ({ data, change }: StepProps) => {
 
   return (
     <FromContainer heading={data.heading} description={data.description}>
-      <div className='grid gap-4 pt-8'>
-        <div className='grid gap-4 rounded-lg bg-muted-foreground p-6'>
+      <div className='grid gap-3 pt-3 sm:gap-4 sm:pt-8'>
+        <div className='grid gap-2 rounded-lg bg-muted-foreground p-4 sm:gap-4 sm:p-6'>
           <div className='grid grid-cols-[1fr_max-content] items-center gap-5 '>
             <p>
-              <strong className='text-base capitalize text-secondary'>
+              <strong className='text-sm capitalize text-secondary sm:text-base'>
                 {`${plan} (${planType})`}
               </strong>
               <br />
               <Button
                 onClick={change}
                 variant='Ghost'
-                className='text-sm text-foreground underline'
+                className='px-0 py-0 text-sm text-foreground underline'
               >
                 Change
               </Button>
             </p>
-            <span className='font-bold text-secondary'>{planAmount}</span>
+            <span className='text-sm font-bold text-secondary sm:text-base'>
+              {planAmount}
+            </span>
           </div>
           <hr />
           {addOns.map(addOn => (
@@ -42,9 +44,9 @@ const ConfirmStep = ({ data, change }: StepProps) => {
           ))}
         </div>
       </div>
-      <div className='grid grid-cols-[1fr_max-content] gap-5 p-6 text-sm text-foreground'>
-        <span>Total (per year)</span>
-        <span className='text-xl font-bold text-primary'>
+      <div className='grid grid-cols-[1fr_max-content] gap-5 px-4 pt-6 text-sm text-foreground sm:p-6'>
+        <span>Total (per {planType === 'yearly' ? 'year' : 'month'})</span>
+        <span className='text-lg font-bold text-primary sm:text-xl'>
           +${totalAmount}/{planType === 'yearly' ? 'yr' : 'mo'}
         </span>
       </div>

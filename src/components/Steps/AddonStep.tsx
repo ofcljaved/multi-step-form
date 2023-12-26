@@ -17,7 +17,7 @@ const AddonStep = ({ data }: StepProps) => {
 
   return (
     <FromContainer heading={data.heading} description={data.description}>
-      <div className='grid gap-4 pt-8'>
+      <div className='grid gap-3 pt-3 sm:gap-4 sm:pt-8'>
         {data.form &&
           (data.form as CheckboxField[]).map(form => {
             const name = form.name as keyof PlanSchemaType;
@@ -28,19 +28,19 @@ const AddonStep = ({ data }: StepProps) => {
                 inputVisible={inputVisible}
                 error={errors[name]}
                 {...register(name as keyof PlanSchemaType)}
-                className='grid grid-cols-[max-content_1fr_max-content] items-center gap-5 rounded-lg border border-foreground px-6 py-4 hover:cursor-pointer hover:border-primary focus-visible:border-primary peer-checked:border-primary peer-checked:bg-muted-foreground'
+                className='border-foregroundp grid grid-cols-[max-content_1fr_max-content] items-center gap-4 rounded-lg border px-4 py-4 hover:cursor-pointer hover:border-primary focus-visible:border-primary peer-checked:border-primary peer-checked:bg-muted-foreground sm:gap-5 sm:px-6'
               >
                 <div className='icon-checked grid aspect-square place-content-center rounded border border-foreground p-1'>
                   <Icon name='Checkmark' />
                 </div>
-                <p className='text-sm text-foreground'>
-                  <strong className='text-base text-secondary'>
+                <p className='text-xs text-foreground sm:text-sm'>
+                  <strong className='text-sm text-secondary sm:text-base'>
                     {label[planType].type}
                   </strong>
                   <br />
                   {label[planType].description}
                 </p>
-                <span className='text-sm text-primary'>
+                <span className='text-xs text-primary sm:text-sm'>
                   +{label[planType].amount}
                 </span>
               </Checkbox>

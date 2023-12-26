@@ -13,18 +13,21 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className='grid w-full grid-cols-2'>
         {label && (
-          <label className='mb-1 inline-block text-secondary' htmlFor={id}>
+          <label
+            className='inline-block text-sm text-secondary sm:mb-1 sm:text-base'
+            htmlFor={id}
+          >
             {label}
           </label>
         )}
         {error && (
-          <p className='text-right font-semibold text-destructive'>
+          <p className='text-right text-sm font-medium text-destructive sm:text-base'>
             {error.message}
           </p>
         )}
         <input
           type={type}
-          className={`col-span-full w-full cursor-pointer rounded-lg border border-gray-200 bg-white px-3 py-3 text-black outline-none duration-200 hover:border-primary focus:bg-gray-50 focus-visible:border-primary ${
+          className={`col-span-full w-full cursor-pointer rounded border border-gray-200 bg-white px-4 py-2 text-sm text-black outline-none duration-200 hover:border-primary focus:bg-gray-50 focus-visible:border-primary sm:rounded-lg sm:px-3 sm:py-3 sm:text-base ${
             error?.message ? 'border-destructive' : null
           } ${className}`}
           ref={ref}

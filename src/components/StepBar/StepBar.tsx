@@ -36,7 +36,7 @@ const StepBar = ({ activeStep, setSearchParams }: StepBarProps) => {
               <Button
                 onClick={() => handleClick(step.id)}
                 variant='Ghost'
-                className='-mx-4 w-full justify-normal justify-items-start uppercase sm:-mx-0 sm:grid sm:grid-cols-[max-content_auto] sm:grid-rows-[max-content_auto] sm:gap-x-4'
+                className='w-full justify-normal justify-items-start px-0 py-0 uppercase sm:grid sm:grid-cols-[max-content_auto] sm:grid-rows-[max-content_auto] sm:gap-x-4 sm:px-4 sm:py-2'
               >
                 <span
                   className={`row-span-full grid aspect-square h-8 place-items-center rounded-full font-bold ${activeClass}`}
